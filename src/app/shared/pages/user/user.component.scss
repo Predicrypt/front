@@ -1,0 +1,40 @@
+.user-container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+
+  .user-data {
+    margin-left: 20px;
+
+    .row {
+      margin-top: 20px;
+
+      p {
+        margin: 0;
+        margin-bottom: 9px;
+      }
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  }
+
+  .balances-container {
+    margin-top: 40px;
+
+    .balances-data {
+      margin-left: 20px;
+      margin-top: 40px;
+    }
+  }
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 18px;
+}

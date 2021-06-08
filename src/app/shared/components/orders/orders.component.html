@@ -1,0 +1,11 @@
+<div class="orders-container">
+  <mat-tab-group>
+    <mat-tab label="Buy">
+      <app-order-tab [side]="'BUY'"></app-order-tab>
+    </mat-tab>
+    <mat-tab label="Sell">
+      <app-order-tab [side]="'SELL'"></app-order-tab>
+    </mat-tab>
+  </mat-tab-group>
+  <app-active-orders ></app-active-orders>
+</div>

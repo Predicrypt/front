@@ -1,6 +1,8 @@
 # Stage 0, "build-stage", based on Node.js, to build and compile the frontend
 FROM node:12.18.2 as build-stage
 WORKDIR /app
+ARG GITHUB_TOKEN
+COPY .npmrc .npmrc 
 COPY package*.json /app/
 RUN npm install
 COPY ./ /app/

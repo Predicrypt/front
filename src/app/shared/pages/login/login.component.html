@@ -1,0 +1,29 @@
+<div class="login-container" layout-align="center center">
+  <div class="login-window">
+    <div class="logo-container">
+      <p class="logo">Predicrypt</p>
+    </div>
+    <form [formGroup]="loginForm">
+      <div class="field">
+        <p class="title">Email</p>
+        <input formControlName="email" matInput type="text" />
+      </div>
+      <div class="field">
+        <p class="title">Password</p>
+        <input matInput formControlName="password" type="password" />
+      </div>
+    </form>
+    <div class="bottom-container">
+      <button
+        mat-raised-button
+        type="button"
+        [disabled]="!loginForm.valid"
+        (click)="doLogin()"
+      >
+        Login
+      </button>
+
+      <p class="text">Dont have and account? <a routerLink="/signup">Sign up</a></p>
+    </div>
+  </div>
+</div>

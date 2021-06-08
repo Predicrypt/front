@@ -1,0 +1,33 @@
+<div class="register-container">
+  <div class="register-window">
+    <div class="logo-container">
+      <p class="logo">Predicrypt</p>
+    </div>
+    <form [formGroup]="registerForm">
+      <div class="field">
+        <p class="title">Email</p>
+        <input formControlName="email" matInput type="text" />
+      </div>
+      <div class="field">
+        <p class="title">Password</p>
+        <input matInput formControlName="password" type="password" />
+      </div>
+      <div class="field">
+        <p class="title">Password confirm</p>
+        <input matInput formControlName="passwordConfirm" type="password" />
+      </div>
+    </form>
+    <div class="bottom-container">
+      <button
+        mat-raised-button
+        type="button"
+        [disabled]="!registerForm.valid"
+        (click)="doRegister()"
+      >
+        Sign up
+      </button>
+
+      <p class="text">Already have an account? <a routerLink="/login">Log in</a></p>
+    </div>
+  </div>
+</div>

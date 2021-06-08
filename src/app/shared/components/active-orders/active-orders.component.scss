@@ -1,0 +1,10 @@
+.active-orders-container {
+  display: flex;
+  flex-direction: column;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    min-height: 100px;
+  }
+}

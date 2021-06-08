@@ -1,0 +1,38 @@
+<div class="user-container">
+  <p class="title">User data</p>
+  <div class="user-data">
+    <form [formGroup]="userForm">
+      <div class="row">
+        <p class="subtitle">Email:</p>
+      </div>
+      <div class="row">
+        <p class="subtitle">Api Key</p>
+        <input
+          matInput
+          class="button"
+          type="text"
+          formControlName="apiKey"
+          type="text"
+        />
+      </div>
+      <div class="row">
+        <p class="subtitle">Secret Key</p>
+        <input
+          matInput
+          class="button"
+          type="password"
+          formControlName="secretKey"
+          type="text"
+        />
+      </div>
+    </form>
+    <button mat-raised-button (click)="saveKeys()">Save</button>
+  </div>
+
+  <div class="balances-container">
+    <p class="title">Balances</p>
+    <div class="balances-data">
+      <app-balance-list></app-balance-list>
+    </div>
+  </div>
+</div>

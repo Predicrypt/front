@@ -1,0 +1,56 @@
+@import "../../config/scss-vars.scss";
+
+.login-container {
+  display: flex;
+  height: calc(100vh - #{$header-height});
+  justify-content: center;
+  align-items: center;
+
+  .login-window {
+    background-color: #ffffff;
+    padding: 50px 30px 30px 30px;
+    margin-bottom: 100px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 60px;
+
+      .logo {
+        font-size: 30px;
+      }
+    }
+    .field {
+      margin-top: 20px;
+
+      .title {
+        font-size: 13px;
+        margin: 0;
+        margin-bottom: 5px;
+      }
+    }
+
+    input {
+      width: 300px;
+      height: 30px;
+      border-radius: 4px;
+      border: 1px solid $border-input;
+    }
+
+    .bottom-container {
+      margin-top: 30px;
+
+      button {
+        width: 100%;
+      }
+
+      .text {
+        text-align: center;
+        margin: 0;
+        margin-top: 20px;
+        font-size: 11px;
+      }
+    }
+  }
+}
