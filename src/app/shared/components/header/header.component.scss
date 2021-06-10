@@ -4,7 +4,42 @@
   display: flex;
   flex-direction: row;
   height: $header-height;
-  background-color: grey;
+  background-color: $header-background;
   align-items: center;
   padding: 0 30px;
+
+  .logo {
+    flex: 1;
+
+    img {
+      width: 180px;
+    }
+  }
+
+  .links {
+    flex: 6;
+  }
+
+  .right-items {
+    flex: 2;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+
+    .icon{
+      color: white;
+    }
+  }
+
+  .header-link {
+    font-size: 15px;
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+  }  
+
+  .register {
+    color: $header-background;
+  }
 }

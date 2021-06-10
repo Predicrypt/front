@@ -1,0 +1,8 @@
+@import "../../shared/config/scss-vars.scss";
+
+mat-tab-group {
+  &.mat-tab-group.mat-primary .mat-tab-label {
+    background-color: $yellow-button;
+    color: $header-background;
+  }
+}

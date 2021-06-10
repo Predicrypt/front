@@ -1,1 +1,21 @@
-<div id="graph"></div>
+<div class="graph-container">
+  <div class="header">
+    <div class="title">
+      {{ symbol }}
+    </div>
+    <div class="interval" [formGroup]="intervalForm">
+      <mat-form-field class="gray-form" appearance="fill">
+        <mat-label>Intervals</mat-label>
+        <mat-select formControlName="interval">
+          <mat-option
+            *ngFor="let interval of getIntervals()"
+            [value]="interval"
+            >{{ interval }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <form class="symbol-change"></form>
+  </div>
+  <div id="graph"></div>
+</div>

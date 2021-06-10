@@ -8,6 +8,9 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 @import "app/shared/config/scss-vars.scss";
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=IBM+Plex+Sans&display=swap");
+@import 'app/scss/am-components/am-tabs';
+@import 'app/scss/am-components/am-form';
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -54,4 +57,25 @@ body {
 
 p {
   margin: 0;
+}
+
+.shadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+body {
+  background-color: $white-background;
+}
+
+.button-yellow {
+  border-radius: 8px;
+  background-color: $yellow-button;
+}
+
+* {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.tab-yellow{
+  background-color: $yellow-button;
 }

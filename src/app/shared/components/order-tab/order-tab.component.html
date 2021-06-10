@@ -1,7 +1,7 @@
 <div class="order-tab-container">
   <form [formGroup]="formOrder">
     <div class="form-order-container">
-      <mat-form-field class="" appearance="fill">
+      <mat-form-field class="gray-form" appearance="fill">
         <mat-label>Order types</mat-label>
         <mat-select formControlName="type">
           <mat-option
@@ -11,11 +11,11 @@
           >
         </mat-select>
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field class="gray-form">
         <mat-label>Quantity</mat-label>
         <input formControlName="quantity" matInput type="text" />
       </mat-form-field>
-      <mat-form-field *ngIf="formOrder.controls.type.value === 'LIMIT'">
+      <mat-form-field class="gray-form" *ngIf="formOrder.controls.type.value === 'LIMIT'">
         <mat-label>Price</mat-label>
         <input
           formControlName="price"
@@ -28,6 +28,7 @@
       <button
         mat-raised-button
         [disabled]="formOrder.valid"
+        class="button-yellow"
         (click)="doOrder()"
       >
         {{ side }}

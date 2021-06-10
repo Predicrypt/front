@@ -1,0 +1,64 @@
+<div class="list-coins-container">
+  <p class="title" *ngIf="!getTopCoins">Available Pairs</p>
+  <p
+    class="title"
+    [ngClass]="{ 'top-coin-title': topCoins }"
+    *ngIf="getTopCoins"
+  >
+    Top Coins
+  </p>
+  <div class="list-coins shadow" *ngIf="!getTopCoins">
+    <mat-form-field class="search-container" [formGroup]="searchForm">
+      <mat-label>Search</mat-label>
+      <input
+        matInput
+        formControlName="searchText"
+        type="text"
+        placeholder="Search pair"
+      />
+    </mat-form-field>
+    <div class="headers">
+      <div class="row">Pair</div>
+      <div class="row">Last Price</div>
+      <div class="row">Volume</div>
+      <div class="row">24h Change</div>
+    </div>
+    <div class="coin" *ngFor="let coin of coins" (click)="goToSymbol(coin.symbol)">
+      <div class="row symbol">{{ coin.symbol }}</div>
+      <div class="row price">{{ coin.lastPrice | number: "1.1-6" }}</div>
+      <div class="row volume">{{ coin.volume | number: "1.1-6" }}</div>
+      <div
+        class="row change"
+        [ngClass]="{
+          green: coin.priceChangePercent >= 0,
+          red: coin.priceChangePercent < 0
+        }"
+      >
+        {{ coin.priceChangePercent | number: "1.1-2" }}%
+      </div>
+    </div>
+  </div>
+
+  <div class="list-top-coins shadow" *ngIf="getTopCoins">
+    <div class="headers">
+      <div class="row">Pair</div>
+      <div class="row">Last Price</div>
+      <div class="row">Volume</div>
+      <div class="row">24h Change</div>
+    </div>
+    <div class="top-coin" *ngFor="let coin of coins" (click)="goToSymbol(coin.symbol)">
+      <div class="top row">{{ coin.symbol }}</div>
+      <div class="top row">{{ coin.lastPrice | number: "1.1-2" }} $</div>
+      <div class="top row">{{ coin.volume | number: "1.1-2" }}</div>
+      <div
+        class="top row"
+        [ngClass]="{
+          green: coin.priceChangePercent >= 0,
+          red: coin.priceChangePercent < 0
+        }"
+      >
+        {{ coin.priceChangePercent | number: "1.1-2" }}%
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,6 +20,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { ActiveOrdersComponent } from './shared/components/active-orders/active-orders.component';
 import { UserComponent } from './shared/pages/user/user.component';
 import { BalanceListComponent } from './shared/components/balance-list/balance-list.component';
+import { ListCoinsComponent } from './shared/components/list-coins/list-coins.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { HomeComponent } from './shared/pages/home/home.component';
+import { MarketComponent } from './shared/pages/market/market.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,10 @@ import { BalanceListComponent } from './shared/components/balance-list/balance-l
     SymbolComponent,
     ActiveOrdersComponent,
     UserComponent,
-    BalanceListComponent
+    BalanceListComponent,
+    ListCoinsComponent,
+    HomeComponent,
+    MarketComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +53,8 @@ import { BalanceListComponent } from './shared/components/balance-list/balance-l
     MatInputModule,
     MatTabsModule,
     MatSelectModule,
+    ScrollingModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

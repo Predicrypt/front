@@ -1,5 +1,7 @@
-.order-tab-container {
+@import '../../config/scss-vars.scss';
 
+.order-tab-container {
+    background-color: $background-order;
     .form-order-container{
         display: flex;
         flex-direction: column;
@@ -9,6 +11,10 @@
         
         mat-form-field {
             width: 100%;
+
+            .mat-form-field-flex{
+                background-color: $background-input;
+            }
         }
 
         button {

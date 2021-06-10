@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { OrderSide } from '../../enums/OrderSide';
 import { OrderTypes } from '../../enums/OrderTypes';
@@ -17,11 +17,14 @@ export class OrderTabComponent implements OnInit {
     { name: 'Limit', value: OrderTypes.LIMIT },
   ];
   formOrder: FormGroup;
-  constructor(private binanceService: BinanceService) {}
-
-  ngOnInit(): void {
+  constructor(private binanceService: BinanceService) {
     this.initForm();
   }
+
+  ngOnInit(): void {
+    
+  }
+
 
   initForm() {
     this.formOrder = new FormGroup({

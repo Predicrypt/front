@@ -18,14 +18,17 @@ export class AuthService {
 
   getPayload() {
     let session = this.getCookie('express:sess');
-    let obj = JSON.parse(atob(session))
-    if (obj) {
-      try {
-        return JSON.parse(atob(obj.jwt.split('.')[1]));
-      } catch (err) {
-        console.log(err);
-        return null;
+    if (session) {
+      let obj = JSON.parse(atob(session));
+      if (obj) {
+        try {
+          return JSON.parse(atob(obj.jwt.split('.')[1]));
+        } catch (err) {
+          console.log(err);
+          return null;
+        }
       }
+      return null;
     }
     return null;
   }
@@ -52,25 +55,14 @@ export class AuthService {
   login(email: string, password: string) {
     const url = `${Constants.urls.base}${Constants.urls.auth}${Constants.urls.login}`;
 
-    this.http.post(url, { email, password }, { observe: 'response' }).subscribe(
-      (res) => {
-        console.log(res);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+    return this.http.post(url, { email, password }, { observe: 'response' });
   }
 
   register(email: string, password: string, passwordConfirm: string) {
     const url = `${Constants.urls.base}${Constants.urls.auth}${Constants.urls.signUp}`;
 
-    this.http
-      .post(url, { email, password, passwordConfirm }, { observe: 'response' })
-      .subscribe(
-        (res) => console.log,
-        (err) => console.log
-      );
+    return this.http
+      .post(url, { email, password, passwordConfirm }, { observe: 'response' });
   }
 
   logout() {

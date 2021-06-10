@@ -15,6 +15,7 @@ import { UserService } from '../../services/user.service';
 })
 export class UserComponent implements OnInit {
   userForm: FormGroup;
+  email: string;
   constructor(
     private authService: AuthService,
     private userService: UserService
@@ -22,7 +23,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
-    this.authService.getEmail();
+    this.email = this.authService.getEmail();
   }
 
   initForm() {

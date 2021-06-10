@@ -1,0 +1,86 @@
+@import "../../config/scss-vars.scss";
+.list-coins-container {
+  max-width: 1200px;
+  margin: auto;
+
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 40px 0;
+  }
+
+  .top-coin-title {
+    text-align: center;
+  }
+
+  .list-coins {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    .search-container {
+      margin-left: auto;
+      
+    }
+
+    .coin {
+      display: flex;
+      border-top: 1px solid $border-input;
+      padding: 10px 25px;
+
+      .symbol {
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      .change {
+        font-size: 17px;
+      }
+
+      &:hover {
+        background-color: $ligth-gray-background;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .list-top-coins {
+    .top-coin {
+      display: flex;
+      padding: 20px 25px;
+      border-top: 1px solid $border-input;
+
+      &:hover {
+        background-color: $ligth-gray-background;
+        cursor: pointer;
+      }
+
+      .top {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .headers {
+    display: flex;
+    padding: 20px 25px;
+    background-color: $white-background;
+    color: $gray-text;
+    font-size: 16px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+  }
+}
+
+.red {
+  color: $negative-red;
+}
+
+.green {
+  color: $positive-green;
+}

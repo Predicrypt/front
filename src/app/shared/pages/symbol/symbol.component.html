@@ -1,3 +1,14 @@
 <div class="symbol-container">
-  <app-orders [symbol]="'BTCUSDT'"></app-orders>
+  <div class="row-graph">
+    <div class="graph-container">
+      <app-graph [symbol]="symbol" [interval]="interval"></app-graph>
+    </div>
+    <div class="orders-container">
+      <app-active-orders  [symbol]="symbol"></app-active-orders>
+    </div>
+  </div>
+
+  <div class="order-tab-container">
+    <app-orders [symbol]="symbol"></app-orders>
+  </div>
 </div>

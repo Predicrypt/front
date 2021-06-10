@@ -3,6 +3,7 @@
     <div class="logo-container">
       <p class="logo">Predicrypt</p>
     </div>
+    <p class="login">Log In</p>
     <form [formGroup]="loginForm">
       <div class="field">
         <p class="title">Email</p>
@@ -15,6 +16,7 @@
     </form>
     <div class="bottom-container">
       <button
+        class="button-yellow"
         mat-raised-button
         type="button"
         [disabled]="!loginForm.valid"
@@ -23,7 +25,9 @@
         Login
       </button>
 
-      <p class="text">Dont have and account? <a routerLink="/signup">Sign up</a></p>
+      <p class="text">
+        Dont have and account? <a routerLink="/signup">Sign up</a>
+      </p>
     </div>
   </div>
 </div>

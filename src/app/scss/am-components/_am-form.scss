@@ -1,0 +1,25 @@
+@import "../../shared/config/scss-vars.scss";
+
+mat-form-field {
+  &.mat-focused .mat-form-field-label {
+    color: white !important;
+
+    .mat-select-min-line {
+      color: white;
+    }
+  }
+
+  &.gray-form .mat-form-field-wrapper .mat-form-field-ripple {
+    background-color: white;
+  }
+  &.gray-form .mat-form-field-wrapper .mat-form-field-flex {
+    background-color: $background-input;
+
+    .mat-form-field-label,
+    .mat-input-element,
+    .mat-select-min-line,
+    .mat-select-arrow {
+      color: white !important;
+    }
+  }
+}

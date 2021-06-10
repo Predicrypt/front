@@ -1,1 +1,24 @@
-<div class="header-container">header works</div>
+<div class="header-container">
+  <div class="logo">
+    <img src="../../../../assets/img/predicript.png" />
+  </div>
+  <div class="links">
+    <a class="header-link" routerLink="/">Home</a>
+    <a class="header-link" routerLink="/markets" class="header-link">Markets</a>
+  </div>
+  <div class="right-items">
+    <div *ngIf="authService.isLogged()" class="logged">
+      <a class="header-link" (click)="logout()">Log Out</a>
+      <a class="header-link" routerLink="/user"><mat-icon class="icon">person</mat-icon></a>
+    </div>
+    <div *ngIf="!authService.isLogged()" class="no-logged">
+      <a class="header-link" routerLink="/login">Login</a>
+      <a
+        mat-raised-button
+        class="header-link button-yellow register"
+        routerLink="/signup"
+        >Register</a
+      >
+    </div>
+  </div>
+</div>

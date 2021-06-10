@@ -1,0 +1,23 @@
+@import "../../config/scss-vars.scss";
+
+.graph-container {
+  background-color: #1b1d23;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 20px 15px 20px;
+    background-color: #1A1C20;
+
+    .title {
+      font-size: 20px;
+      color: white;
+    }
+
+    .interval {
+        margin-left: auto;
+        color: white;
+    }
+  }
+}

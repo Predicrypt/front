@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Constants } from '../config/constants';
 import { OrderSide } from '../enums/OrderSide';
 import { OrderTypes } from '../enums/OrderTypes';
+import { PriceChange24hr } from '../interfaces/Binance/24hrPriceChange';
 import { AccountTradeListResponse } from '../interfaces/Binance/AccountTradeList';
 import { AllOrdersRequest } from '../interfaces/Binance/AllOrders';
 import { CandlestickDataRequest } from '../interfaces/Binance/CandlestickData';
@@ -100,7 +101,7 @@ export class BinanceService {
 
     return this.http.get<AccountTradeListResponse[]>(url, {
       observe: 'response',
-      params: symbol as any,
+      params: { symbol: symbol },
     });
   }
 
@@ -113,11 +114,18 @@ export class BinanceService {
   }) {
     const url = `${Constants.urls.base}${Constants.urls.orders}${Constants.urls.spot}`;
 
-    return this.http.post<any>(url, {
-      observe: 'response',
-      params: obj as any,
-    });
+    return this.http.post<any>(url, obj, { observe: 'response' });
   }
 
- 
+  get24htAveragePrices() {
+    const url = `${this.URL}/api/v3/ticker/24hr`;
+
+    return this.http.get<PriceChange24hr[]>(url, { observe: 'response' });
+  }
+
+  get24htAveragePrice(symbol: string) {
+    const url = `${this.URL}/api/v3/ticker/24hr?symbol=${symbol}`;
+
+    return this.http.get<PriceChange24hr>(url, { observe: 'response' });
+  }
 }

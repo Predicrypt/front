@@ -24,6 +24,11 @@ export class BalanceListComponent implements OnInit {
   initBalances() {
     this.userService.getBalances().subscribe((res) => {
       this.listBalances = res.body || [];
+      console.log(this.listBalances)
     });
+  }
+
+  Number(n: any){
+    return Number(n);
   }
 }
