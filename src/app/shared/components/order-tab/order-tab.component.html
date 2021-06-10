@@ -27,7 +27,7 @@
 
       <button
         mat-raised-button
-        [disabled]="formOrder.valid"
+        [disabled]="formOrder.valid || !authServive.isLogged()"
         class="button-yellow"
         (click)="doOrder()"
       >

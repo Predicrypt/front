@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { BalanceListComponent } from '../../components/balance-list/balance-list.component';
 import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
 
@@ -16,6 +17,7 @@ import { UserService } from '../../services/user.service';
 export class UserComponent implements OnInit {
   userForm: FormGroup;
   email: string;
+  @ViewChild('balances') balances: BalanceListComponent;
   constructor(
     private authService: AuthService,
     private userService: UserService
@@ -39,6 +41,8 @@ export class UserComponent implements OnInit {
         this.userForm.controls.apiKey.value,
         this.userForm.controls.secretKey.value
       )
-      .subscribe(console.log);
+      .subscribe(res => {
+        this.balances.initBalances()
+      });
   }
 }

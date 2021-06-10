@@ -1,4 +1,10 @@
 <div class="active-orders-container">
-  Order history
-  <div class="row"></div>
+  <div class="title">
+    Order history
+  </div>
+  
+  <div class="orders-list">
+    <span *ngIf="authService.isLogged()">There is no active orders</span>
+    <span *ngIf="!authService.isLogged()"><a routerLink="/login">Log in</a> to view your active orders</span>
+  </div>
 </div>

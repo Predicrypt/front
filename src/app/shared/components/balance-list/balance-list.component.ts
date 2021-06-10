@@ -3,8 +3,6 @@ import { Balance } from '../../interfaces/BalanceData';
 import { BinanceService } from '../../services/binance.service';
 import { UserService } from '../../services/user.service';
 
-
-
 @Component({
   selector: 'app-balance-list',
   templateUrl: './balance-list.component.html',
@@ -24,11 +22,11 @@ export class BalanceListComponent implements OnInit {
   initBalances() {
     this.userService.getBalances().subscribe((res) => {
       this.listBalances = res.body || [];
-      console.log(this.listBalances)
+      console.log(this.listBalances);
     });
   }
 
-  Number(n: any){
+  Number(n: any) {
     return Number(n);
   }
 }

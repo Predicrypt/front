@@ -50,6 +50,10 @@
 
       button {
         width: 100%;
+
+        &:disabled {
+          background-color: $yellow-disabled;
+        }
       }
 
       .text {

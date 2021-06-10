@@ -66,14 +66,15 @@ export class GraphComponent implements OnInit, AfterContentInit, OnDestroy {
   }
 
   initForm() {
+    let intervalTemp = this.interval
     this.intervalForm = new FormGroup({
-      interval: new FormControl(this.interval),
+      interval: new FormControl(intervalTemp),
     });
 
     this.intervalForm.controls.interval.valueChanges.subscribe((val) => {
       let lastInterval = this.interval;
       this.interval = val;
-      this.changeIntervalChart(this.interval);
+      this.changeIntervalChart(lastInterval);
     });
   }
 
@@ -189,7 +190,6 @@ export class GraphComponent implements OnInit, AfterContentInit, OnDestroy {
           }
 
           this.candleStickSeries.setData(this.klines);
-          this.ws = await this.binanceService.getWebsocketInstance();
           this.binanceService.unsubscribefromPairWebsocket(
             this.symbol,
             interval

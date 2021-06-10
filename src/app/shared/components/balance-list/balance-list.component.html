@@ -1,9 +1,18 @@
-<div class="balance-list-container">
-  <div
-    class="row"
-    *ngFor="let balance of listBalances"
-    [ngStyle]="{ display: Number(balance.free) > 0 ? 'flex' : 'none' }"
-  >
-    {{ balance.asset }} Balance: {{ balance.free }}
+<div class="balance-list-container shadow">
+  <div class="headers">
+    <div class="row">Coin</div>
+    <div class="row">Total</div>
+    <div class="row">Availible</div>
+  </div>
+  <div class="list-balances">
+    <div
+      class="balance"
+      *ngFor="let balance of listBalances"
+      [ngStyle]="{ display: Number(balance.free) > 0 ? 'flex' : 'none' }"
+    >
+      <div class="row">{{ balance.asset }}</div>
+      <div class="row">{{ balance.free }}</div>
+      <div class="row">{{ balance.free }}</div>
+    </div>
   </div>
 </div>

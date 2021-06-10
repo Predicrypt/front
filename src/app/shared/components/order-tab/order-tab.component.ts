@@ -2,6 +2,7 @@ import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { OrderSide } from '../../enums/OrderSide';
 import { OrderTypes } from '../../enums/OrderTypes';
+import { AuthService } from '../../services/auth.service';
 import { BinanceService } from '../../services/binance.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class OrderTabComponent implements OnInit {
     { name: 'Limit', value: OrderTypes.LIMIT },
   ];
   formOrder: FormGroup;
-  constructor(private binanceService: BinanceService) {
+  constructor(private binanceService: BinanceService, public authServive: AuthService) {
     this.initForm();
   }
 
